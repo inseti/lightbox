@@ -19,11 +19,15 @@
         <!-- CHANGE id  attribute if this is not a signup ask -->
         <div class="bsd-lightbox" id="bsd-lightbox-signup">
             <!-- CHANGE ACTION URL -->
-            <form name="signup" action="/page/s/lightbox" method="post" id="lightbox-signup">
+            <form name="signup" action="http://www.elifesciences.org/crm/civicrm/profile/create?reset=1&amp;gid=15" method="post" id="lightbox-signup">
+                <input type="hidden" name="reset" value="1">
+                <input type="hidden" name="gid" value="15">
+                <input type="hidden" name="_qf_Edit_next" value="Save">
                 <fieldset>
                     <legend>Sign Up for Updates</legend>
-                    <input id="lightbox-signup-email" name="email" type="email" placeholder="Email Address" />
-                    <input id="lightbox-signup-zip" name="zip" type="text" placeholder="Zip Code" />
+                    <input id="lightbox-signup-first-name" name="first_name" type="text" placeholder="First Name" />
+                    <input id="lightbox-signup-last-name" name="last_name" type="text" placeholder="Last Name" />
+                    <input id="lightbox-signup-email" name="email-3" type="email" placeholder="Email Address" />
                     <input id="lightbox-signup-submit" name="submit-btn" type="submit" value="Submit" />
                 </fieldset>
             </form>
