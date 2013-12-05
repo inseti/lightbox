@@ -48,7 +48,7 @@
         // Check for lightbox cookie
         var cookie = jQuery.cookie('email-signup-lightbox--nobel');
         if (cookie != 'viewed') {
-            jQuery('input.text, textarea').placeholder();
+            jQuery('#lightbox-signup').find('input.text, textarea').placeholder();
 
             jQuery.fn.colorbox({
                 href: '#bsd-lightbox-signup', // Specify by ID
@@ -58,7 +58,7 @@
 
             var lbname = "Lightbox EOY 2013: Signup"; // CHANGE TO REFLECT NAME OF LIGHTBOX
             _gaq.push(["_trackEvent", "BSD Lightbox", "Load", lbname, 0, true]);
-            jQuery(".bsd-lightbox input.submit").one("keydown mousedown", function(e){
+            jQuery('#lightbox-signup').find('input.submit').one("keydown mousedown", function(e){
                 if (e.type === "mousedown" || e.which === 13) {
                     _gaq.push(["_trackEvent", "BSD Lightbox", "Submit", lbname, 0, true]);
                 }
