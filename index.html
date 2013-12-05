@@ -42,8 +42,8 @@
     jQuery(document).ready(function() {
     	console.log("loading ...");
         // Add helper classes
-        jQuery('input[type="text"], input[type="email"], textarea').addClass('text');
-        jQuery('input[type="submit"], input[type="image"]').addClass('submit');
+        jQuery('#lightbox-signup').find('input[type="text"], input[type="email"], textarea').addClass('text');
+        jQuery('#lightbox-signup').find('input[type="submit"], input[type="image"]').addClass('submit');
 
         // Check for lightbox cookie
         var cookie = jQuery.cookie('lightbox');
