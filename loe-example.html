@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Generic Lightbox</title>
+        
+        <!-- Link to CSS -->
+        <link rel="stylesheet" type="text/css" href="css/lightbox.css">
+        
+        <!-- Link to JS -->
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/source.min.js"></script>
+        
+    </head>
+    <body>  
+
+    <!-- ********** START LIGHTBOX HTML ********** -->
+    
+    <!-- ============== -->
+    <!-- = SIGNUP ASK = -->
+    <!-- ============== -->
+    <div class="bsd-lightbox-wrap">
+        <!-- CHANGE id and data-name attribute IF MORE THAN ONE LIGHTBOX -->
+        <div class="bsd-lightbox" id="bsd-lightbox-signup" data-name="BSD Lightbox EOY 2012: Signup">
+
+            <!-- CHANGE ACTION URL -->
+            <form name="signup" action="/page/s/lightbox" method="post" id="lightbox-signup">
+                <fieldset>
+                    <legend>Sign Up for Updates</legend>
+                    <input id="lightbox-signup-email" name="email" type="email" placeholder="Email Address" />
+                    <input id="lightbox-signup-zip" name="zip" type="text" placeholder="Zip Code" />
+                    <input id="lightbox-signup-submit" name="submit-btn" type="submit" value="Submit" />
+                </fieldset>
+            </form>
+        
+        </div> <!-- /#bsd-lightbox-signup -->
+    </div> <!-- /.bsd-lightbox-wrap -->
+    
+    <!-- ============== -->
+    <!-- = DONATE ASK = -->
+    <!-- ============== -->
+    <div class="bsd-lightbox-wrap">
+        <!-- CHANGE id and data-name attribute IF MORE THAN ONE LIGHTBOX -->
+        <div class="bsd-lightbox" id="bsd-lightbox-donate" data-name="BSD Lightbox EOY 2012: Donate Ask">
+            <h2>Donate today</h2>
+            <a class="donate" href="#" title="Donate Today"><img src="http://placehold.it/250x30" alt="donate"></a>
+        
+        </div> <!-- /#bsd-lightbox-signup -->
+    </div> <!-- /.bsd-lightbox-wrap -->
+    
+    
+    <!-- ======================== -->
+    <!-- = RECURRING DONATE ASK = -->
+    <!-- ======================== -->
+    <div class="bsd-lightbox-wrap">
+        <!-- CHANGE id and data-name attribute IF MORE THAN ONE LIGHTBOX -->
+        <div class="bsd-lightbox" id="bsd-lightbox-recurring-donate" data-name="BSD Lightbox EOY 2012: Recurring Donate Ask">
+            <h2>Make your donation recurring!</h2>
+            <a class="donate" href="#" title="Donate Today"><img src="http://placehold.it/250x30" alt="donate"></a>
+        
+        </div> <!-- /#bsd-lightbox-signup -->
+    </div> <!-- /.bsd-lightbox-wrap -->
+    
+    
+    <!-- ==================== -->
+    <!-- = QUICK DONATE ASK = -->
+    <!-- ==================== -->
+    <div class="bsd-lightbox-wrap">
+        <!-- CHANGE id and data-name attribute IF MORE THAN ONE LIGHTBOX -->
+        <div class="bsd-lightbox" id="bsd-lightbox-quickdonate" data-name="BSD Lightbox EOY 2012: Quick Donate Ask">
+            <h2>Quick Donate today</h2>
+            <a class="donate" href="#" title="Donate Today"><img src="http://placehold.it/250x30" alt="donate"></a>
+        
+        </div> <!-- /#bsd-lightbox-signup -->
+    </div> <!-- /.bsd-lightbox-wrap -->
+    
+    <!-- ********** END LIGHTBOX HTML ********** -->
+
+    <!-- ********** START LIGHTBOX JS ********** -->
+    <script type="text/javascript">
+    var bsdLb = bsdLb || {};
+    
+    bsdLb.lightbox = function(id){
+        var lbname = jQuery(id).data("name"); // Get the data-name attribute based on id passed to function
+        
+        jQuery("input.text, textarea").placeholder();
+        jQuery.fn.colorbox({
+            href: id, // Specify by ID
+            inline: true // Tell colorbox to look for inline
+            scrolling: false, // Hide scrollbars for overflowing content
+        });
+
+        _gaq.push(["_trackEvent", "BSD Lightbox", "Load", lbname, 0, true]);
+        jQuery(".bsd-lightbox input.submit").one("keydown mousedown", function(e){
+            if (e.type === "mousedown" || e.which === 13) {
+                _gaq.push(["_trackEvent", "BSD Lightbox", "Submit", lbname, 0, true]);
+            }
+        });
+    }
+
+    jQuery(document).ready(function() {
+        
+        var cookie = jQuery.cookie("lightbox");
+        // Add helper classes
+        jQuery("input[type="text"], input[type="email"], textarea").addClass("text");
+        jQuery("input[type="submit"], input[type="image"]").addClass("submit");
+        
+        // Check for lightbox cookie
+        if (cookie != "viewed") {
+            jQuery("input.text, textarea").placeholder();
+            jQuery.bsdLoe({
+                standard: function(){
+                    bsdLb.lightbox("#bsd-lightbox-signup");
+                },
+                qd_enrolled: function(){
+                    bsdLb.lightbox("#bsd-lightbox-quickdonate");
+                }
+                email: function(){
+                    bsdLb.lightbox("#bsd-lightbox-donate");
+                },
+                donor: function(){
+                    bsdLb.lightbox("#bsd-lightbox-recurring-donate");
+                }
+            });
+            
+            // Set the lightbox cookie
+            jQuery.cookie("lightbox", "viewed", {
+                expires: 14, // days to expiration
+                path: "/", // path of page where the cookie was created
+                domain: "INSERTCLIENTDOMAIN" // CHANGE CLIENT DOMAIN HERE
+            });
+        }
+    
+    });
+    </script>
+    <!-- ********** END LIGHTBOX JS ********** -->
+
+    </body>
+</html>

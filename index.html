@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Generic Lightbox</title>
+
+        <!-- Link to CSS -->
+        <link rel="stylesheet" type="text/css" href="css/lightbox.css">
+
+        <!-- Link to JS -->
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/source.min.js"></script>
+
+    </head>
+    <body>
+
+    <!-- ********** START LIGHTBOX HTML ********** -->
+    <div class="bsd-lightbox-wrap">
+        <!-- CHANGE id  attribute if this is not a signup ask -->
+        <div class="bsd-lightbox" id="bsd-lightbox-signup">
+            <!-- CHANGE ACTION URL -->
+            <form name="signup" action="/page/s/lightbox" method="post" id="lightbox-signup">
+                <fieldset>
+                    <legend>Sign Up for Updates</legend>
+                    <input id="lightbox-signup-email" name="email" type="email" placeholder="Email Address" />
+                    <input id="lightbox-signup-zip" name="zip" type="text" placeholder="Zip Code" />
+                    <input id="lightbox-signup-submit" name="submit-btn" type="submit" value="Submit" />
+                </fieldset>
+            </form>
+
+        </div> <!-- /#bsd-lightbox -->
+    </div> <!-- /#bsd-lightbox-wrap -->
+
+    <!-- ********** END LIGHTBOX HTML ********** -->
+
+    <!-- ********** START LIGHTBOX JS ********** -->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-XXXXX-X']);
+   _gaq.push(['_trackPageview']);
+
+    jQuery(document).ready(function() {
+    	console.log("loading ...");
+        // Add helper classes
+        jQuery('input[type="text"], input[type="email"], textarea').addClass('text');
+        jQuery('input[type="submit"], input[type="image"]').addClass('submit');
+
+        // Check for lightbox cookie
+        var cookie = jQuery.cookie('lightbox');
+        if (cookie != 'viewed') {
+            jQuery('input.text, textarea').placeholder();
+
+            jQuery.fn.colorbox({
+                href: '#bsd-lightbox-signup', // Specify by ID
+                inline: true, // Tell colorbox to look for inline
+                scrolling: false // Hide scrollbars for overflowing content
+            });
+
+            var lbname = "Lightbox EOY 2013: Signup"; // CHANGE TO REFLECT NAME OF LIGHTBOX
+            _gaq.push(["_trackEvent", "BSD Lightbox", "Load", lbname, 0, true]);
+            jQuery(".bsd-lightbox input.submit").one("keydown mousedown", function(e){
+                if (e.type === "mousedown" || e.which === 13) {
+                    _gaq.push(["_trackEvent", "BSD Lightbox", "Submit", lbname, 0, true]);
+                }
+            });
+            jQuery("#cboxClose, #cboxOverlay").one("keydown mousedown", function(e){
+                if (e.type === "mousedown" || e.which === 13) {
+                    _gaq.push(["_trackEvent", "BSD Lightbox", "Close", lbname, 0, true]);
+                }
+            });
+            jQuery.cookie('lightbox', 'viewed', {
+                expires: 3, // days to expiration
+                path: '/', // path of page where the cookie was created
+                domain: 'elifesciences.org' // CHANGE CLIENT DOMAIN HERE
+            });
+        }
+    });
+    </script>
+    <!-- ********** END LIGHTBOX JS ********** -->
+
+    </body>
+</html>
