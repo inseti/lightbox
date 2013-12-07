@@ -45,7 +45,7 @@ body
     margin-top: 50px;
     padding-bottom: 25px;
     margin-bottom: 20px;
-    border-bottom: solid 1px #590c48;
+    border-bottom: solid 1px #501d49;
 }
 
 #bsd-lightbox-signup p.center
@@ -56,7 +56,7 @@ body
 #bsd-lightbox-signup p.upper
 {
     text-transform: uppercase;
-    color: #ce0c4e;
+    color: #bc3757;
     margin-bottom: 4px;
     font-weight: bold;
 }
@@ -93,8 +93,8 @@ body
 
 #lightbox-signup .submit
 {
-    background-color: #ce0c4e;
-    border-bottom: solid 2px #980320;
+    background-color: #bc3757;
+    border-bottom: solid 2px #8b242b;
     border-top: none;
     border-left: none;
     border-right: none;
