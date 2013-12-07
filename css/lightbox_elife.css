@@ -37,7 +37,7 @@ body
 
 #bsd-lightbox-signup p
 {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 #bsd-lightbox-signup div.heading
@@ -46,6 +46,7 @@ body
     padding-bottom: 25px;
     margin-bottom: 20px;
     border-bottom: solid 1px #501d49;
+    font-family: 'Avenir LT W01 35 Light', Helvetica, Arial, Verdana, sans-serif;
 }
 
 #bsd-lightbox-signup p.center
@@ -63,6 +64,7 @@ body
 #bsd-lightbox-signup p.para
 {
     text-align: center;
+    font-family: 'Avenir LT W01 35 Light', Helvetica, Arial, Verdana, sans-serif;
 }
 
 #lightbox-signup legend
