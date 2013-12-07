@@ -1,0 +1,120 @@
+#cboxOverlay{background:#929497;}
+#colorbox{overflow: visible;}
+#cboxWrapper{z-index: 500; overflow: visible;}
+body
+{
+    background-color: #dbd8d7;
+    background-image: url("../img/mock-background.png");
+    font-family: Helvetica, Arial, Verdana, sans-serif;
+}
+
+#cboxLoadedContent
+{
+    background-color: #672e5f;
+}
+
+.bsd-lightbox
+{
+    background-color: transparent;
+    background-image: url("../img/lightbox-background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#bsd-lightbox-signup
+{
+    padding: 50px;
+    color: #fff;
+}
+
+#bsd-lightbox-signup div.rs
+{
+    position: absolute;
+    top: -95px;
+    left: 205px;
+    z-index: 501;
+}
+
+#bsd-lightbox-signup p
+{
+    font-size: 16px;
+}
+
+#bsd-lightbox-signup div.heading
+{
+    margin-top: 50px;
+    padding-bottom: 25px;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #590c48;
+}
+
+#bsd-lightbox-signup p.center
+{
+    text-align: center;
+    margin-bottom: 4px;
+}
+#bsd-lightbox-signup p.upper
+{
+    text-transform: uppercase;
+    color: #ce0c4e;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+#bsd-lightbox-signup p.para
+{
+    text-align: center;
+}
+
+#lightbox-signup legend
+{
+    display: none;
+}
+
+#lightbox-signup fieldset
+{
+    border: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#lightbox-signup input
+{
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+#lightbox-signup .text
+{
+    text-transform: lowercase;
+    border: none;
+    padding: 8px 0 8px 20px;
+    font-size: 14px;
+}
+
+#lightbox-signup .submit
+{
+    background-color: #ce0c4e;
+    border-bottom: solid 2px #980320;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: #fff;
+    display: block;
+    margin: 18px auto 0 auto;
+    font-size: 18px;
+    padding: 8px 40px 6px 40px;
+    text-transform: uppercase;
+}
+
+#lightbox-signup-first-name,
+#lightbox-signup-last-name
+{
+    width: 20%;
+    margin-right: 15px;
+}
+
+#lightbox-signup-email
+{
+    width: 38%;
+    margin-right: 0;
+}
