@@ -1,6 +1,6 @@
 #cboxOverlay{background:#929497;}
-#colorbox{overflow: visible;}
-#cboxWrapper{z-index: 500; overflow: visible;}
+#colorbox{overflow: visible; z-index: 100001;}
+#cboxWrapper{z-index: 100001; overflow: visible;}
 body.lightbox
 {
     background-color: #dbd8d7;
