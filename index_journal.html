@@ -13,7 +13,7 @@
       <link type="text/css" rel="stylesheet" href="http://dex3165296d6d.cloudfront.net/sites/default/files/cdn/css/http/css_AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs.css" media="all" />
       <link type="text/css" rel="stylesheet" href="http://dex3165296d6d.cloudfront.net/sites/default/files/cdn/css/http/css_yl78d1Daj-EkC_2FeylUtLTs76l5BGVUYEE9viB9zd8.css" media="print" />
       <link type="text/css" rel="stylesheet" href="http://dex3165296d6d.cloudfront.net/sites/default/files/cdn/css/http/css_xb6Hf6vOrrSF3iyK9daS_CsXj4Byp6jyfM5SKD4JmqM.css" media="all" />
-      
+
       <!--[if (lt IE 9)&(!IEMobile)]>
       <link type="text/css" rel="stylesheet" href="http://dex3165296d6d.cloudfront.net/sites/default/files/cdn/css/http/css__XPTs8bnzGwsADkYSTFGwKmsDEI9ro4Rjn9t7oPz_P4.css" media="all" />
       <![endif]-->
@@ -21,26 +21,156 @@
       <link type="text/css" rel="stylesheet" href="http://dex3165296d6d.cloudfront.net/sites/default/files/cdn/css/http/css_UX_hzPeWPNPVeQYo0g1yqHRunThgVl-IZx9CRpCmIS8.css" media="all" />
       <!--<![endif]-->
         <link rel="stylesheet" type="text/css" href="http://fast.fonts.com/cssapi/c10f70b9-7e7a-4f33-9361-d43022ae343e.css"/>
-        
-        
 
-        <link rel="stylesheet" type="text/css" href="css/journal_elife.css">
+
+
+        <!-- <link rel="stylesheet" type="text/css" href="css/journal_elife.css"> -->
 
     </head>
     <body class="html front not-logged-in page-home">
 
-    <!-- ********** START LIGHTBOX HTML ********** -->
     <div class="journal-column-wrap">
+    <!-- ********** START LIGHTBOX HTML ********** -->
+        <style scoped>
+            #cboxOverlay{background:#929497;}
+            #colorbox{overflow: visible;}
+            #cboxWrapper{z-index: 500; overflow: visible;}
+            #cboxLoadedContent
+            {
+                background-color: #672e5f;
+            }
+
+            .journal-column-wrap
+            {
+                background-color: transparent;
+                background-image: url("http://www.elifesciences.org/wp-content/uploads/2013/12/journal-background.jpg");
+                background-repeat: repeat;
+                width: 100%;
+                font-size: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #journal-column-signup
+            {
+                margin: 11px 18px;
+                padding: 12px 0;
+                color: #fff;
+            }
+
+            #journal-column-signup div.rs
+            {
+                margin-top: 5px;
+                text-align: center;
+            }
+
+            #journal-column-signup p
+            {
+                font-size: 16px;
+                line-height: 1.3em;
+            }
+
+            #journal-column-signup div.heading
+            {
+                margin-top: 5px;
+                padding-bottom: 20px;
+                border-bottom: solid 1px #4d721c;
+                font-family: 'Avenir LT W01 35 Light', Helvetica, Arial, Verdana, sans-serif;
+            }
+
+            #journal-column-signup p.center
+            {
+                text-align: center;
+                margin-bottom: 0;
+            }
+
+            #journal-column-signup p.upper
+            {
+                text-transform: uppercase;
+                color: #6b3263;
+                margin-bottom: 0;
+                font-weight: bold;
+            }
+
+            #journal-column-signup p.para
+            {
+                font-family: 'Avenir LT W01 35 Light', Helvetica, Arial, Verdana, sans-serif;
+                margin-top: 20px;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+
+            #lightbox-signup legend
+            {
+                display: none;
+            }
+
+            #lightbox-signup fieldset
+            {
+                border: none;
+                margin-left: 0;
+                padding-left: 0;
+            }
+
+            #lightbox-signup input
+            {
+                border-radius: 4px;
+                -moz-border-radius: 4px;
+                background-color: #fff;
+            }
+
+            #lightbox-signup .text
+            {
+                border: none;
+                padding: 8px 0 8px 0;
+                font-size: 16px;
+                text-align: center;
+            }
+
+            #lightbox-signup .submit
+            {
+                background-color: #6b3263;
+                border-bottom: solid 3px #3a1431;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                color: #fff;
+                display: block;
+                margin: 12px auto 0 auto;
+                font-size: 18px;
+                padding: 8px 40px 6px 40px;
+                text-transform: uppercase;
+                width: 100%;
+            }
+
+            #lightbox-signup-first-name,
+            #lightbox-signup-last-name
+            {
+                width: 48%;
+            }
+
+            #lightbox-signup-last-name
+            {
+                float: right;
+            }
+
+            #lightbox-signup-email
+            {
+                width: 100%;
+                margin-right: 0;
+                margin-top: 10px;
+            }
+        </style>
 
         <!-- CHANGE id  attribute if this is not a signup ask -->
         <div class="journal-column" id="journal-column-signup">
-            <div class="rs"><img src="img_journal/rs90x89.png" alt="Randy Schekman"></div>
+            <div class="rs"><img src="http://www.elifesciences.org/wp-content/uploads/2013/12/rs90x89.png" alt="Randy Schekman"></div>
             <div class="heading">
                 <p class="center upper">Randy Schekman</p>
                 <p class="center">eLife Editor-in-chief awarded</p>
                 <p class="center upper">2013 Nobel Prize</p>
             </div>
-            
+
             <p class="para">
                 Join Randy and his colleagues in a unique collaboration between funders and researchers to make research communication work better.
             </p>
@@ -58,8 +188,8 @@
                 </fieldset>
             </form>
 
-        </div> <!-- /#journal-column -->
-    </div> <!-- /#journal-column-wrap -->
+        </div> <!-- /.journal-column -->
+    </div> <!-- /.journal-column-wrap -->
 
     </body>
 </html>
